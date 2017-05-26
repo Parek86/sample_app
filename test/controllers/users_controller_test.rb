@@ -2,10 +2,11 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
-  def setup
-    @user       = users(:michael)
-    @other_user = users(:archer)
-  end
+
+    def setup
+      @user = users(:michael)
+      @other_user = users(:archer)
+    end
 
   test "should redirect index when not logged in" do
       get users_path
@@ -41,6 +42,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                                         password_confirmation: 'password',
                                                         admin: true }}
         assert_not @other_user.reload.admin?
+      end
+
+
+      test "should redirect following when not logged in" do
+        get following_user_path(@user)
+        assert_redirected_to login_url
+      end
+
+      test "should redirect followers when not logged in" do
+        get followers_user_path(@user)
+        assert_redirected_to login_url
       end
 
 
