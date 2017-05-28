@@ -13,5 +13,18 @@
       <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
+
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Reaction <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= button_to "Like", reactions_path #params?  %></li>
+        <li><%= button_to "Dislike", reactions_path #params? %></li>
+        <li><%= button_to "Desire", reactions_path #params? %></li>
+        <li><%= button_to "None", reactions_path  #params? %></li>
+      </ul>
+    </li>
+    <!-- <span class="content"> <%= 'Your reaction: ''Like: ' 'Dislike: ' 'Desire: ' %>  </span> -->
   </span>
 </li>
