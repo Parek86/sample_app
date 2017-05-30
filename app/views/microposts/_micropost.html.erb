@@ -13,10 +13,8 @@
       <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
-    <%= form_for  @reaction do |f| %>
-    <%= f.select :content, ['Like','Dislike','Desire','None'] %>
-    <%= f.submit 'Reaction', class: "btn btn-primary" %>
-    <% end %>
+
+      <%= render 'reactions/reaction' %>
 
 
   </span>

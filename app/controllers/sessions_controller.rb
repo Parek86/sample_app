@@ -2,7 +2,6 @@
 class SessionsController < ApplicationController
 
   def new
-
   end
 
   def create
@@ -23,8 +22,6 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-
-
 
   def destroy
     log_out if logged_in?

@@ -19,6 +19,7 @@ before_action :admin_user,     only: :destroy
     @user = User.find(params[:id])
   #  redirect_to root_url and return unless @user.activated?
     @microposts = @user.microposts.paginate(page: params[:page])
+    @reaction= Reaction.all
   end
 
 
