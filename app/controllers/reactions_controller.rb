@@ -9,8 +9,8 @@ def create
         flash[:success] = "Reaction!!!"
         redirect_to root_url
     else
-    flash[:danger] = "No reaction"
-    redirect_to root_url
+      flash[:danger] = "No reaction"
+      redirect_to root_url
   end
 end
 

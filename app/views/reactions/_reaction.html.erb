@@ -1,4 +1,5 @@
 <%= form_for  @reaction.create do |f| %>
 <%= f.select :content, ['Like','Dislike','Desire']%>
 <%= f.submit 'Reaction', class: "btn btn-primary" %>
+<%= link_to 'Remove reaction', '#' %>
 <% end %>
